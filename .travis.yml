@@ -15,16 +15,15 @@ matrix:
       os: linux
       compiler: gcc
       arch: arm64
-    - name: "Linux / gcc / ppc64le"
-      os: linux
-      compiler: gcc
-      arch: ppc64le
-    - name: "macOS / clang / x86_64"
-      os: osx
-      compiler: clang
-    - name: "Windows / MSVC / x64, Win32"
-      os: windows
       # CMake picks up MSVC regardless of what compiler we specify here.
 script:
   - ./ci/build
   - ./ci/test
+deploy:
+  provider: releases
+  user: "amarender-b"
+  password: "MyGithub$2"
+  file_glob: true
+  file: build-*/**/*
+  skip_cleanup: true
+  draft: true
