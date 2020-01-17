@@ -21,8 +21,8 @@ script:
   - ./ci/test
 deploy:
   provider: releases
-  user: "amarender-b"
-  password: "MyGithub$2"
+  user: amarender-b
+  password: MyGithub$2
   file_glob: true
   file: build-*/**/*
   skip_cleanup: true
