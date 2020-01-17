@@ -21,8 +21,7 @@ script:
   - ./ci/test
 deploy:
   provider: releases
-  user: amarender-b
-  password: MyGithub$2
+  api_key:  19ff97b78dc72b499976d149a5c1ae8c891efd65
   file_glob: true
   file: build-*/**/*
   skip_cleanup: true
